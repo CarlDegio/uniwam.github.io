@@ -470,6 +470,74 @@ h1, h2, h3, h4, h5, h6, .section-heading {
   display: block;
 }
 
+.sub-result-group {
+  margin-top: 24px;
+}
+
+.sub-result-tabs {
+  display: flex;
+  gap: 0;
+  margin: 20px 0 28px 0;
+  border-bottom: 2px solid var(--border-light);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sub-result-tab {
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 24px;
+  border: none;
+  background: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.sub-result-tab:hover {
+  color: var(--text-primary);
+}
+
+.sub-result-tab.active {
+  color: var(--honey-bronze);
+  font-weight: 600;
+}
+
+.sub-result-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--honey-bronze);
+}
+
+.sub-result-content {
+  display: none;
+}
+
+.sub-result-content.active {
+  display: block;
+}
+
+.latent-grid-section {
+  margin: 32px auto 36px;
+}
+
+.latent-action-table td.empty-score {
+  color: #b8b8b8;
+  font-style: italic;
+}
+
+.legacy-result-section {
+  padding-top: 8px;
+  border-top: 1px solid var(--border-subtle);
+}
+
 .leaderboard-section {
   width: 100%;
   max-width: none;
