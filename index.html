@@ -74,8 +74,8 @@
     <div class="hero-flow hero-compact">
       <div class="hero-orb" aria-hidden="true"></div>
       <div class="hero-title-line">
-        <span class="hero-title-art">Embodied-R1.5</span><span class="hero-title-sep">:</span>
-        <span class="hero-title-rest">Evolving <span class="hero-keyword">Physical Intelligence</span> via <span class="hero-keyword">Embodied Foundation Models</span></span>
+        <span class="hero-title-art">What Matters for</span><br>
+        <span class="hero-title-rest"><span class="hero-keyword">Latent Actions</span> in <span class="hero-keyword">Robot Learning</span></span>
       </div>
 
       <div class="hero-team-block expanded">
@@ -126,9 +126,9 @@
       </div>
 
       <div class="hero-pill-row">
-        <span class="hero-pill">Embodied Foundation Model</span>
-        <span class="hero-pill">General Physical Intelligence</span>
-        <span class="hero-pill">Unified Embodied Reasoning</span>
+        <span class="hero-pill">Latent Action Models</span>
+        <span class="hero-pill">Unlabeled Robot Videos</span>
+        <span class="hero-pill">VLA Policy Learning</span>
       </div>
 
       <div class="hero-actions">
@@ -219,12 +219,12 @@
       <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
         <span style="display: inline-block; padding: 4px 12px; border-radius: 6px; background: linear-gradient(135deg, #2563eb, #7c3aed); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; font-family: system-ui, sans-serif;">TL;DR</span>
         <span style="font-size: 15px; font-family: system-ui, sans-serif; display: inline-flex; align-items: center; gap: 8px;">
-          <span style="color: #9ca3af; font-weight: 500; font-family: 'STIX Two Text', serif;">Embodied-R1</span>
+          <span style="color: #9ca3af; font-weight: 500; font-family: 'STIX Two Text', serif;">Unlabeled Video</span>
           <span style="display: inline-block; background: linear-gradient(135deg, #2563eb, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; font-size: 20px;">↗</span>
-          <span style="font-weight: 700; font-size: 19px; font-family: 'STIX Two Text', serif; background: linear-gradient(135deg, #2563eb, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Embodied-R1.5</span>
+          <span style="font-weight: 700; font-size: 19px; font-family: 'STIX Two Text', serif; background: linear-gradient(135deg, #2563eb, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Latent Action Learning</span>
         </span>
       </div>
-      <p style="font-size: 17px; line-height: 1.75; color: var(--text-primary); margin: 0 0 24px 0; font-weight: 400; font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;">Embodied-R1.5 is a unified Embodied Foundation Model (EFM) that integrates comprehensive embodied reasoning capabilities — spanning embodied cognition, task planning, correction, and pointing — within a single 8B-parameter architecture toward general physical intelligence. It achieves SOTA on 16 out of 24 embodied VLM benchmarks, surpassing Gemini-Robotics-ER-1.5 and GPT-5.4, and can be fine-tuned into a VLA that outperforms π₀.₅ across 4 popular manipulation benchmark suites.</p>
+      <p style="font-size: 17px; line-height: 1.75; color: var(--text-primary); margin: 0 0 24px 0; font-weight: 400; font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;">Latent Action Models (LAMs) aim to learn action-relevant structure from unlabeled robot videos, but prior work mixes different objectives, representations, action heads, dimensions, and evaluation protocols. This paper standardizes the setting and asks which design choices actually matter for downstream robot learning across simulated and real-world manipulation tasks.</p>
 
       <!-- Key Contributions -->
       <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 18px;">
@@ -237,29 +237,43 @@
         <div class="kc-item">
           <div class="kc-num">1</div>
           <div class="kc-body">
-            <h3 class="kc-title">Unified Embodied Foundation Model</h3>
-            <p class="kc-desc">We formalize the capability requirements of an EFM and demonstrate that <strong>embodied cognition</strong>, <strong>task planning and correction</strong>, and <strong>pointing and location</strong> can coexist and reinforce each other within a single 8B-parameter architecture, eliminating the fragmented multi-model paradigm.</p>
+            <h3 class="kc-title">A Unified Empirical Study of LAM Design</h3>
+            <p class="kc-desc">We cast representative latent action variants into a common autoencoding framework and isolate the effects of <strong>motion representations</strong>, <strong>objectives and regularization</strong>, <strong>action heads</strong>, <strong>latent dimensionality</strong>, and <strong>normalization</strong>.</p>
           </div>
         </div>
         <div class="kc-item">
           <div class="kc-num">2</div>
           <div class="kc-body">
-            <h3 class="kc-title">Large-Scale Data System & Multi-Task Balanced RL</h3>
-            <p class="kc-desc">Leveraging <strong>three automated data construction pipelines</strong>, we build a large-scale data system of over <strong>15B tokens</strong>, and design a <strong>multi-task balanced RL recipe</strong> with output-type-specific rewards that resolves interference inherent in heterogeneous multi-task training.</p>
+            <h3 class="kc-title">Better Proxy Metrics for Latent Actions</h3>
+            <p class="kc-desc"><strong>Forward dynamics reconstruction</strong> is a more reliable proxy for latent action quality than MLP probing, while proxy metrics are most useful for <strong>coarse model screening</strong> rather than fine-grained ranking.</p>
           </div>
         </div>
         <div class="kc-item">
           <div class="kc-num">3</div>
           <div class="kc-body">
-            <h3 class="kc-title">Planner-Grounder-Corrector Closed-Loop Framework</h3>
-            <p class="kc-desc">A <strong>Planner-Grounder-Corrector (PGC)</strong> closed-loop framework where a single model orchestrates the full autonomy stack — from <strong>high-level task decomposition</strong> and <strong>precise spatial grounding</strong> to <strong>autonomous self-correction</strong> over long-horizon tasks.</p>
+            <h3 class="kc-title">Strong Baselines from Simple Motion Signals</h3>
+            <p class="kc-desc">Under mixed-data pretraining, the original <strong>LAPO</strong> framework remains a strong baseline, and off-the-shelf visual encoders can produce competitive latent actions through simple <strong>consecutive-frame feature differencing</strong>.</p>
           </div>
         </div>
         <div class="kc-item">
           <div class="kc-num">4</div>
           <div class="kc-body">
-            <h3 class="kc-title">SOTA Results & Full Open-Source Ecosystem</h3>
-            <p class="kc-desc">Achieves <strong>SOTA on 16/24 embodied VLM benchmarks</strong>, surpassing Gemini-Robotics-ER-1.5 and GPT-5.4. Fine-tuned as a VLA, it outperforms π₀.₅ across <strong>4 manipulation benchmark suites</strong>. We fully open-source <strong>model weights</strong>, <strong>datasets</strong>, <strong>training code</strong>, and <strong>EmbodiedEvalKit</strong>.</p>
+            <h3 class="kc-title">Practical Architecture and Regularization Guidance</h3>
+            <p class="kc-desc">We compare regularization strategies and five action head architectures, showing that properly tuned methods can achieve comparable performance while different continuous and discrete latent-action settings favor different heads.</p>
+          </div>
+        </div>
+        <div class="kc-item">
+          <div class="kc-num">5</div>
+          <div class="kc-body">
+            <h3 class="kc-title">A Robust Default Latent Action Space</h3>
+            <p class="kc-desc">Across both <strong>7-DoF single-arm</strong> and <strong>14-DoF dual-arm</strong> robots, a latent action dimension of <strong>32</strong> consistently performs best overall, and extra normalization is unnecessary when pretraining regularization already structures the latent space.</p>
+          </div>
+        </div>
+        <div class="kc-item">
+          <div class="kc-num">6</div>
+          <div class="kc-body">
+            <h3 class="kc-title">Scaling and Real-World Transfer</h3>
+            <p class="kc-desc">Scaling latent-action data for VLM fine-tuning improves downstream VLA performance, and experiments on <strong>Franka</strong> and <strong>Cobot Magic</strong> show that latent-action-tuned backbones provide stronger initialization for real-world manipulation.</p>
           </div>
         </div>
       </div>
@@ -288,11 +302,42 @@
       <div class="section-heading" style="margin-top: 24px;">VLA Benchmark Comparisons</div>
       <div style="background: linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(147,51,234,0.06) 100%); border-left: 3px solid var(--blue-energy); border-radius: 12px; padding: 18px 24px; margin-bottom: 16px;">
         <p style="color: var(--text-primary); font-size: 15.5px; line-height: 1.8; margin: 0; font-weight: 500;">
-          Embodied-R1.5-VLA is built upon Embodied-R1.5 as the backbone, augmented with an action head for VLA training — <em>without</em> large-scale action pretraining. We demonstrate that broad improvements in embodied capabilities effectively transfer to downstream VLA manipulation performance.
+          Embodied-R1.5-VLA is built upon Embodied-R1.5 as the backbone, augmented with an action head for VLA training &mdash; <em>without</em> large-scale action pretraining. We demonstrate that broad improvements in embodied capabilities effectively transfer to downstream VLA manipulation performance.
         </p>
       </div>
       <div id="vla-charts-container"></div>
       <div class="chart-legend" id="vla-chart-legend"></div>
+
+      <div class="section-heading" style="margin-top: 32px;">What the Study Covers</div>
+      <p class="section-lead">The paper evaluates latent action learning across diverse robots and manipulation tasks, connecting self-supervised latent action pretraining to downstream VLA policy learning.</p>
+      <div style="background: linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(147,51,234,0.06) 100%); border-left: 3px solid var(--blue-energy); border-radius: 12px; padding: 18px 24px; margin-bottom: 16px;">
+        <p style="color: var(--text-primary); font-size: 15.5px; line-height: 1.8; margin: 0; font-weight: 500;">
+          <strong>Core message:</strong> latent actions can become a scalable bridge from abundant unlabeled video to robot policy learning, but their effectiveness depends on evaluation protocol, representation choice, regularization, action-head design, latent dimensionality, and data scale.
+        </p>
+      </div>
+      <div class="kc-list">
+        <div class="kc-item">
+          <div class="kc-num">Q</div>
+          <div class="kc-body">
+            <h3 class="kc-title">Which proxy should guide model selection?</h3>
+            <p class="kc-desc">Forward-dynamics reconstruction better reflects downstream trends than direct MLP decoding of physical actions.</p>
+          </div>
+        </div>
+        <div class="kc-item">
+          <div class="kc-num">Q</div>
+          <div class="kc-body">
+            <h3 class="kc-title">Which design choices are reliable defaults?</h3>
+            <p class="kc-desc">LAPO remains a strong baseline; tuned regularization matters; dimension 32 is a robust default across tested robot embodiments.</p>
+          </div>
+        </div>
+        <div class="kc-item">
+          <div class="kc-num">Q</div>
+          <div class="kc-body">
+            <h3 class="kc-title">Does latent-action pretraining scale?</h3>
+            <p class="kc-desc">Increasing latent-action data for VLM fine-tuning consistently improves downstream VLA performance under the same downstream training recipe.</p>
+          </div>
+        </div>
+      </div>
 
     </div>
 
@@ -331,9 +376,9 @@
     <!-- Result Tabs -->
     <div class="result-tabs">
       <button class="result-tab active" data-tab="vlm-tab">Comprehensive Embodied VLM Evaluation<br><span class="tab-sub">(24+ Benchmarks)</span></button>
-      <button class="result-tab" data-tab="vla-tab">VLA Benchmarks<br><span class="tab-sub">(SIMPLER)</span></button>
-      <button class="result-tab" data-tab="libero-tab">VLA Benchmarks<br><span class="tab-sub">(LIBERO & LIBERO-Plus)</span></button>
-      <button class="result-tab" data-tab="afford-tab">Affordance Benchmarks<br><span class="tab-sub">(PartNet-Mobility)</span></button>
+      <button class="result-tab" data-tab="vla-tab">design 1<br><span class="tab-sub">(SIMPLER)</span></button>
+      <button class="result-tab" data-tab="libero-tab">design 2<br><span class="tab-sub">(LIBERO & LIBERO-Plus)</span></button>
+      <button class="result-tab" data-tab="afford-tab">design 3<br><span class="tab-sub">(PartNet-Mobility)</span></button>
     </div>
 
     <!-- Tab 1: VLM -->
