@@ -1381,6 +1381,12 @@ html {
   background-clip: text;
 }
 
+.hero-title-full {
+  display: inline-block;
+  max-width: 980px;
+  line-height: 1.18;
+}
+
 .hero-title-sep {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 46px;
@@ -1776,6 +1782,11 @@ html {
     display: inline;
   }
 
+  .hero-title-full {
+    display: inline-block;
+    max-width: 100%;
+  }
+
   .hero-title-sep {
     font-size: 28px !important;
   }
@@ -2107,6 +2118,11 @@ html {
 
   .hero-title-art {
     font-size: 24px !important;
+  }
+
+  .hero-title-full {
+    display: inline-block;
+    max-width: 100%;
   }
 
   .hero-title-sep {
