@@ -355,9 +355,10 @@
     </section>
 
     <section class="leaderboard-section brief-result-section">
-      <div class="section-heading">XXX</div>
-      <p class="section-lead">Brief description placeholder.</p>
-      <div class="brief-placeholder-line"></div>
+      <div class="section-heading">Effect of VLM Fine-Tuning Data Scale on Downstream Robotic Manipulation Performance</div>
+      <div class="brief-result-figure">
+        <img src="./images/scaling_law.png" alt="Effect of VLM fine-tuning data scale on downstream robotic manipulation performance">
+      </div>
     </section>
 
     </div><!-- end vlm-tab -->
@@ -832,14 +833,36 @@
     <div class="result-tab-content" id="regularization-tab">
       <section class="leaderboard-section latent-grid-section">
         <div class="section-heading">Correlation Between Proxy Metrics and Downstream Robotic Manipulation</div>
-        <div class="pdf-figure-wrapper">
-          <object
-            data="./images/correlation%20between%20proxy%20metrics%20and%20downstream%20robotic%20manipulation.pdf"
-            type="application/pdf"
-            aria-label="Correlation between proxy metrics and downstream robotic manipulation"
-          >
-            <a href="./images/correlation%20between%20proxy%20metrics%20and%20downstream%20robotic%20manipulation.pdf" target="_blank">Open PDF figure</a>
-          </object>
+        <div class="brief-result-figure regularization-figure">
+          <img src="./images/correlation%20between%20proxy.png" alt="Correlation between proxy metrics and downstream robotic manipulation">
+        </div>
+      </section>
+
+      <section class="leaderboard-section latent-grid-section">
+        <div class="section-heading">Effect of Regularization Strength &lambda;<sub>reg</sub> on Latent Action Learning for Different Regularization Methods</div>
+        <div class="brief-result-figure regularization-figure">
+          <img src="./images/lambda_regular.png" alt="Effect of regularization strength on latent action learning">
+        </div>
+      </section>
+
+      <section class="leaderboard-section latent-grid-section">
+        <div class="section-heading">Performance of Different Regularization Methods Throughout Training</div>
+        <div class="brief-result-figure regularization-figure">
+          <img src="./images/method%20regular.png" alt="Performance of different regularization methods throughout training">
+        </div>
+      </section>
+
+      <section class="leaderboard-section latent-grid-section">
+        <div class="section-heading">Effect of Latent Action Dimension on Downstream Robotic Manipulation Performance</div>
+        <div class="brief-result-figure regularization-figure">
+          <img src="./images/action_dim.png" alt="Effect of latent action dimension on downstream robotic manipulation performance">
+        </div>
+      </section>
+
+      <section class="leaderboard-section latent-grid-section">
+        <div class="section-heading">Performance Difference Between Unnormalized and Normalized Settings Across Methods and Benchmarks</div>
+        <div class="brief-result-figure regularization-figure regularization-figure-compact">
+          <img src="./images/denorm.png" alt="Performance difference between unnormalized and normalized settings across methods and benchmarks">
         </div>
       </section>
     </div><!-- end regularization-tab -->
