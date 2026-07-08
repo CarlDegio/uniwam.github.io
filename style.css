@@ -546,6 +546,22 @@ h1, h2, h3, h4, h5, h6, .section-heading {
   font-style: italic;
 }
 
+.pdf-figure-wrapper {
+  overflow: hidden;
+  border: 1.5px solid #d0d0d0;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07), 0 1.5px 6px rgba(0, 0, 0, 0.04);
+}
+
+.pdf-figure-wrapper object {
+  display: block;
+  width: 100%;
+  height: min(78vh, 860px);
+  min-height: 520px;
+  border: 0;
+}
+
 .legacy-result-section {
   padding-top: 8px;
   border-top: 1px solid var(--border-subtle);
@@ -561,6 +577,20 @@ h1, h2, h3, h4, h5, h6, .section-heading {
 
 .brief-result-section {
   margin-top: 26px;
+}
+
+.brief-result-figure {
+  overflow: hidden;
+  border: 1.5px solid #d0d0d0;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07), 0 1.5px 6px rgba(0, 0, 0, 0.04);
+}
+
+.brief-result-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .brief-placeholder-line {

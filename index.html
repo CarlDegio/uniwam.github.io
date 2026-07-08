@@ -333,6 +333,7 @@
       <button class="result-tab active" data-tab="vlm-tab">Brief Result</button>
       <button class="result-tab" data-tab="vla-tab">design 1<br><span class="tab-sub">Consecutive Frame Motion Representations</span></button>
       <button class="result-tab" data-tab="libero-tab">design 2<br><span class="tab-sub">Learning Objectives and Regularization</span></button>
+      <button class="result-tab" data-tab="regularization-tab">Regularization Parameter<br><span class="tab-sub">Balance Reconstruction and Latent Space Structure</span></button>
       <button class="result-tab" data-tab="afford-tab">design 3<br><span class="tab-sub">(PartNet-Mobility)</span></button>
     </div>
 
@@ -340,19 +341,21 @@
     <div class="result-tab-content active" id="vlm-tab">
 
     <section class="leaderboard-section brief-result-section">
-      <div class="section-heading">performance comparison</div>
-      <p class="section-lead">Brief description placeholder.</p>
-      <div class="brief-placeholder-line"></div>
+      <div class="section-heading">Main Performance Comparison</div>
+      <div class="brief-result-figure">
+        <img src="./images/main_performance.png" alt="Main performance comparison">
+      </div>
     </section>
 
     <section class="leaderboard-section brief-result-section">
-      <div class="section-heading">Correlation between proxy metrics and downstream performance</div>
-      <p class="section-lead">Brief description placeholder.</p>
-      <div class="brief-placeholder-line"></div>
+      <div class="section-heading">Different Action Head Comparison</div>
+      <div class="brief-result-figure">
+        <img src="./images/action_head.png" alt="Different action head comparison">
+      </div>
     </section>
 
     <section class="leaderboard-section brief-result-section">
-      <div class="section-heading">Heatmap of averaged performance for different regularization methods and action head architectures</div>
+      <div class="section-heading">XXX</div>
       <p class="section-lead">Brief description placeholder.</p>
       <div class="brief-placeholder-line"></div>
     </section>
@@ -825,7 +828,23 @@
 
     </div><!-- end libero-tab -->
 
-    <!-- Tab 3: Affordance -->
+    <!-- Tab 3: Regularization Parameter -->
+    <div class="result-tab-content" id="regularization-tab">
+      <section class="leaderboard-section latent-grid-section">
+        <div class="section-heading">Correlation Between Proxy Metrics and Downstream Robotic Manipulation</div>
+        <div class="pdf-figure-wrapper">
+          <object
+            data="./images/correlation%20between%20proxy%20metrics%20and%20downstream%20robotic%20manipulation.pdf"
+            type="application/pdf"
+            aria-label="Correlation between proxy metrics and downstream robotic manipulation"
+          >
+            <a href="./images/correlation%20between%20proxy%20metrics%20and%20downstream%20robotic%20manipulation.pdf" target="_blank">Open PDF figure</a>
+          </object>
+        </div>
+      </section>
+    </div><!-- end regularization-tab -->
+
+    <!-- Tab 4: Affordance -->
     <div class="result-tab-content" id="afford-tab">
 
     <section class="leaderboard-section legacy-result-section">
