@@ -480,6 +480,7 @@ h1, h2, h3, h4, h5, h6, .section-heading {
   margin: 20px 0 28px 0;
   border-bottom: 2px solid var(--border-light);
   overflow-x: auto;
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -522,10 +523,22 @@ h1, h2, h3, h4, h5, h6, .section-heading {
 
 .sub-result-content.active {
   display: block;
+  overflow: visible;
 }
 
 .latent-grid-section {
   margin: 32px auto 36px;
+}
+
+.latent-grid-section .leaderboard-table-wrapper {
+  overflow-y: visible;
+}
+
+.latent-action-table th,
+.latent-action-table td {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  line-height: 1.15;
 }
 
 .latent-action-table td.empty-score {
