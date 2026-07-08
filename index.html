@@ -340,8 +340,13 @@
     <!-- Tab 1: VLM -->
     <div class="result-tab-content active" id="vlm-tab">
 
+    <div style="background: linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(147,51,234,0.06) 100%); border-left: 3px solid var(--blue-energy); border-radius: 12px; padding: 18px 24px; margin: 20px 0 20px 0;">
+      <p style="color: var(--text-primary); font-size: 15.5px; line-height: 1.8; margin: 0; font-weight: 500;">These results summarize the main empirical message of the paper: <strong>latent action design matters across representation choice, action-head integration, and video fine-tuning scale</strong>. LAPO and semantic frame differencing provide strong latent-action supervision, action heads benefit when latent actions remain involved during downstream policy learning, and scaling Stage-II VLM fine-tuning with more diverse video data consistently improves downstream robotic manipulation.</p>
+    </div>
+
     <section class="leaderboard-section brief-result-section">
       <div class="section-heading">Main Performance Comparison</div>
+      <p class="section-lead">This table compares latent action designs across LIBERO, LIBERO-Plus, and RoboTwin2.0 under five action-head architectures. It highlights the overall strength of LAPO, the competitiveness of semantic frame differencing such as &Delta;DINO, and the weaker robustness of optical-flow based representations under perturbations.</p>
       <div class="brief-result-figure">
         <img src="./images/main_performance.png" alt="Main performance comparison">
       </div>
@@ -349,6 +354,7 @@
 
     <section class="leaderboard-section brief-result-section">
       <div class="section-heading">Different Action Head Comparison</div>
+      <p class="section-lead">This heatmap studies how latent actions should be integrated into physical action prediction. The result shows that latent actions are more useful when they remain active as intermediate or auxiliary objectives during downstream policy learning, rather than being used only as a pre-training signal and discarded at inference.</p>
       <div class="brief-result-figure">
         <img src="./images/action_head.png" alt="Different action head comparison">
       </div>
@@ -356,6 +362,7 @@
 
     <section class="leaderboard-section brief-result-section">
       <div class="section-heading">Effect of VLM Fine-Tuning Data Scale on Downstream Robotic Manipulation Performance</div>
+      <p class="section-lead">This result isolates the effect of Stage-II VLM backbone fine-tuning data scale while keeping Stage-III policy training fixed. Increasing the amount and diversity of video-only latent-action fine-tuning data improves downstream manipulation performance, with the largest gains on benchmarks requiring stronger generalization.</p>
       <div class="brief-result-figure">
         <img src="./images/scaling_law.png" alt="Effect of VLM fine-tuning data scale on downstream robotic manipulation performance">
       </div>
@@ -833,6 +840,7 @@
     <div class="result-tab-content" id="regularization-tab">
       <section class="leaderboard-section latent-grid-section">
         <div class="section-heading">Correlation Between Proxy Metrics and Downstream Robotic Manipulation</div>
+        <p class="section-lead">This figure evaluates whether inexpensive proxy metrics can predict downstream robot policy performance. The correlations suggest that proxy metrics are useful for coarse model screening, while reconstruction-based metrics such as SSIM Gain and MSE Gain are generally more faithful than probe losses for assessing latent action quality.</p>
         <div class="brief-result-figure regularization-figure">
           <img src="./images/correlation%20between%20proxy.png" alt="Correlation between proxy metrics and downstream robotic manipulation">
         </div>
@@ -840,6 +848,7 @@
 
       <section class="leaderboard-section latent-grid-section">
         <div class="section-heading">Effect of Regularization Strength &lambda;<sub>reg</sub> on Latent Action Learning for Different Regularization Methods</div>
+        <p class="section-lead">This result shows that regularization strength controls the balance between preserving transition dynamics and imposing latent-space structure. Overly strong regularization suppresses action-relevant motion information, so weak-to-moderate settings are preferred for continuous latent actions.</p>
         <div class="brief-result-figure regularization-figure">
           <img src="./images/lambda_regular.png" alt="Effect of regularization strength on latent action learning">
         </div>
@@ -847,6 +856,7 @@
 
       <section class="leaderboard-section latent-grid-section">
         <div class="section-heading">Performance of Different Regularization Methods Throughout Training</div>
+        <p class="section-lead">This training-process view tracks proxy metrics over Stage-I latent action learning. It shows that latent representations become progressively more action-relevant during training, while different regularizers shape the trade-off between physical-action recoverability and future-frame reconstruction quality.</p>
         <div class="brief-result-figure regularization-figure">
           <img src="./images/method%20regular.png" alt="Performance of different regularization methods throughout training">
         </div>
@@ -854,6 +864,7 @@
 
       <section class="leaderboard-section latent-grid-section">
         <div class="section-heading">Effect of Latent Action Dimension on Downstream Robotic Manipulation Performance</div>
+        <p class="section-lead">This ablation studies how much latent capacity is needed for robot control. Compact dimensions can be sufficient for saturated single-arm benchmarks, but dual-arm manipulation needs more capacity; overall, a latent action dimension around 32 provides the best trade-off across platforms.</p>
         <div class="brief-result-figure regularization-figure">
           <img src="./images/action_dim.png" alt="Effect of latent action dimension on downstream robotic manipulation performance">
         </div>
@@ -861,6 +872,7 @@
 
       <section class="leaderboard-section latent-grid-section">
         <div class="section-heading">Performance Difference Between Unnormalized and Normalized Settings Across Methods and Benchmarks</div>
+        <p class="section-lead">This figure compares downstream performance with and without latent action normalization. When the latent space is already properly regularized, preserving the original latent scale often improves performance, suggesting that magnitude information can remain useful for policy learning.</p>
         <div class="brief-result-figure regularization-figure regularization-figure-compact">
           <img src="./images/denorm.png" alt="Performance difference between unnormalized and normalized settings across methods and benchmarks">
         </div>
