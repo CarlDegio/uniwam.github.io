@@ -921,6 +921,7 @@ img {
   border: 1px solid var(--border-subtle);
   border-radius: 24px;
   padding: 28px 36px;
+  margin: 0 0 24px 0;
   box-shadow: var(--shadow-md);
   transition: all 0.3s ease;
 }
@@ -1081,17 +1082,8 @@ img {
 
 /* BibTeX */
 .bibtex-card {
-  background: var(--bg-elevated);
-  border: 1px solid var(--border-subtle);
   color: var(--text-secondary);
-  padding: 28px 36px;
-  border-radius: 16px;
-  width: 100%;
-  max-width: none;
-  margin: 0;
-  box-sizing: border-box;
   font-size: 14px;
-  box-shadow: var(--shadow-sm);
 }
 
 .bibtex-card-header {
