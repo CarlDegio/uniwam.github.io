@@ -580,6 +580,22 @@
       <p style="color: var(--text-primary); font-size: 15.5px; line-height: 1.8; margin: 0; font-weight: 500;">For continuous latent actions, <strong>regularization strength matters more than the specific regularizer</strong>: VAE, Sparsity, and SIGReg yield comparable downstream performance once properly tuned. <strong>VQ-VAE</strong> improves robustness on LIBERO-Plus under distribution shift, but its discrete bottleneck can reduce fine-grained control on LIBERO and RoboTwin2.0, making weak-to-moderate continuous regularization the safest default.</p>
     </div>
 
+    <section class="leaderboard-section latent-grid-section">
+      <div class="section-heading">Effect of Regularization Strength &lambda;<sub>reg</sub> on Latent Action Learning for Different Regularization Methods</div>
+      <p class="section-lead">This result shows that regularization strength controls the balance between preserving transition dynamics and imposing latent-space structure. Overly strong regularization suppresses action-relevant motion information, so weak-to-moderate settings are preferred for continuous latent actions.</p>
+      <div class="brief-result-figure regularization-figure">
+        <img src="./images/lambda_regular.png" alt="Effect of regularization strength on latent action learning">
+      </div>
+    </section>
+
+    <section class="leaderboard-section latent-grid-section">
+      <div class="section-heading">Performance of Different Regularization Methods Throughout Training</div>
+      <p class="section-lead">This training-process view tracks proxy metrics over Stage-I latent action learning. It shows that latent representations become progressively more action-relevant during training, while different regularizers shape the trade-off between physical-action recoverability and future-frame reconstruction quality.</p>
+      <div class="brief-result-figure regularization-figure">
+        <img src="./images/method%20regular.png" alt="Performance of different regularization methods throughout training">
+      </div>
+    </section>
+
     <div class="sub-result-group">
       <div class="sub-result-tabs" aria-label="design 2 benchmark groups">
         <button class="sub-result-tab active" data-subtab="design2-libero">LIBERO</button>
